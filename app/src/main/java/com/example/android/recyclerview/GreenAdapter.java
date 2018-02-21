@@ -16,6 +16,7 @@
 package com.example.android.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -52,7 +53,10 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
     @Override
     public NumberViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        NumberViewHolder mNumberViewHolder = new NumberViewHolder(parent);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.number_list_item,parent, false);
+
+        NumberViewHolder mNumberViewHolder = new NumberViewHolder(view);
         return mNumberViewHolder;
     }
 
